@@ -1,0 +1,25 @@
+\section{Mathematical Logic and Proof Theory}
+
+\begin{definition}[Formal Signature]
+A formal signature $\Tau \eqdef \tuple{\Const, \Func, \Pred}$ consists of constant symbols $\Const$, function symbols $\Func$, and predicate symbols $\Pred$.
+\end{definition}
+
+\begin{definition}[Terms and Formulas]
+Let $\Var$ denote the countable reservoir of variables. The set of well-formed terms $\Term$ and formulas $\Fm$ satisfy:
+\begin{align*}
+\var(x) &\implies x \in \Term, \\
+t \in \Term &\implies \WF(t), \\
+\varphi \in \Fm &\implies \FV(\varphi) \subseteq \Var.
+\end{align*}
+\end{definition}
+
+\begin{theorem}[Reduction Step Equivalence]
+Let $\varphi, \psi \in \Fm$. If $\varphi \rsto \psi$, then:
+\[
+\varphi \propdef \psi \quad \LRA \quad \iproof(\varphi \leftrightarrow \psi).
+\]
+\end{theorem}
+
+\myprf
+By structural induction on the term structure of $\statement(\varphi)$, each reduction preserves truth evaluation.
+\myqed

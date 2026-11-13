@@ -1,0 +1,24 @@
+\section{Set Theory and Class Theory}
+
+\begin{definition}[Sets and Power Classes]
+In Morse-Kelley class theory, a class $X$ is a set when $\Set(X)$ holds. The power class of a set $x$ is denoted $\Pow(x)$.
+\end{definition}
+
+\begin{definition}[Relations and Functions]
+A class $R$ is a binary relation when $\Rel(R)$. Its domain is denoted $\dom(R)$. When $R$ is single-valued on its domain, $\Fun(R)$ holds, and for $x \in \dom(R)$ we denote the value by $R\apo(x)$ or $\The(y, \tuple{x, y} \in R)$.
+\end{definition}
+
+\begin{theorem}[Transitive Ordinals and Successors]
+Let $\alpha$ satisfy $\TOrd(\alpha)$. Then $\Tr(\alpha)$ holds, and its successor ordinal is given by:
+\[
+\mysucc(\alpha) \eqdef \alpha \cup \{\alpha\}.
+\]
+Furthermore, for any non-empty family of classes $\mathcal{A}$, the class intersection satisfies:
+\[
+\interclass \mathcal{A} \subseteq \inter \mathcal{A}.
+\]
+\end{theorem}
+
+\myprf
+Follows directly from ordinal transitivity and the definition of class intersection.
+\myqed

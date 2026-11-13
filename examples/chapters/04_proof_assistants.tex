@@ -1,0 +1,24 @@
+\section{Proof Assistants and Semantic Brackets}
+
+\begin{definition}[Judgments and Rules]
+In an interactive proof assistant, judgments $\judgement(J)$ categorize propositions into $\Truej$ and $\False$. Universal and existential quantifier rules are denoted $\allI$, $\exI$, and $\exE$, while specialization is denoted $\spec$.
+\end{definition}
+
+\begin{definition}[Semantic Interpretation and Quoting]
+For any syntax term $t \in \ITerm$ evaluated in model universe $\Un$ with domain interpretation $\Dd$, semantic evaluation is written:
+\[
+\sem{t}_{\Un, \Dd} \eqdef \llbracket t \rrbracket_{\Un, \Dd}.
+\]
+Syntactic reflection or Gödel corner quotes are written $\cornerquote{t}$.
+\end{definition}
+
+\begin{theorem}[Soundness of Semantic Denotation]
+For well-formed terms $u, v \in \ITerm$, if $\judgement(u = v)$ is derivable, then:
+\[
+\sem{u} = \sem{v} \quad \text{and} \quad \llbrack u \rrbrack = \llbrack v \rrbrack.
+\]
+\end{theorem}
+
+\myprf
+Direct deduction over the inductive structure of judgments.
+\myqed

@@ -1,0 +1,26 @@
+# LaTeX build artifacts and temporary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.log
+*.nav
+*.out
+*.pdf
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/

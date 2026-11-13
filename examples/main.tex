@@ -1,0 +1,32 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{gdmath}
+
+\title{Mathematical Foundations and Proof Assistant Macros}
+\author{Georgy Dunaev}
+\date{November 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document demonstrates the modular macro suite provided by \texttt{gdmath.sty}, organizing formal mathematical logic, set theory, category theory, proof assistant judgments, and semantic delimiters across structured chapter inputs.
+\end{abstract}
+
+\tableofcontents
+
+\newpage
+
+\input{chapters/01_logic.tex}
+\input{chapters/02_set_theory.tex}
+\input{chapters/03_category_theory.tex}
+\input{chapters/04_proof_assistants.tex}
+
+\section{Historical Context and References}
+Foundations of mathematical logic are treated in \cite{mendelson2015}, class and set theory in \cite{jech2003}, category theory in \cite{maclane1998}, and interactive proof systems in \cite{nipkow2002}.
+
+\bibliographystyle{plain}
+\bibliography{bibliography/references}
+
+\end{document}

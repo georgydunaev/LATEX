@@ -1,0 +1,19 @@
+\section{Category Theory}
+
+\begin{definition}[Category Universe]
+A category $\mathcal{C} \in \Cat$ consists of a collection of objects $\Ob(\mathcal{C})$, a collection of morphisms $\Mor(\mathcal{C})$, an identity assignment $\id_A \in \Hom(A, A)$ for each $A \in \Ob(\mathcal{C})$, and associative composition.
+\end{definition}
+
+\begin{definition}[Functors and Natural Transformations]
+Let $F, G \colon \mathcal{C} \to \mathcal{D}$ be functors with opposite category $\mathcal{C}^{\op}$. The morphism actions are denoted $\FMor$ and $\GMor$. A natural transformation $\eta \in \Nat(F, G)$ assigns to each object $A \in \Ob(\mathcal{C})$ a component $\eta_A \in \Hom(F(A), G(A))$.
+\end{definition}
+
+\input{figures/diagram.tex}
+
+\begin{lemma}[Hom Bifunctor]
+The hom-set assignment induces a lifted morphism functor $\HomMor \colon \mathcal{C}^{\op} \times \mathcal{C} \to \Set$.
+\end{lemma}
+
+\myprf
+Verification of identity and composition preservation follows from the diagram in Figure~\ref{fig:commutative_square}.
+\myqed

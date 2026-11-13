@@ -1,0 +1,25 @@
+% Commutative square or diagram figure fixture
+\begin{figure}[H]
+\centering
+\setlength{\unitlength}{1.2cm}
+\begin{picture}(4,3)
+  \put(0.8,2.5){\makebox(0,0){$A$}}
+  \put(3.2,2.5){\makebox(0,0){$B$}}
+  \put(0.8,0.5){\makebox(0,0){$C$}}
+  \put(3.2,0.5){\makebox(0,0){$D$}}
+
+  \put(1.2,2.5){\vector(1,0){1.6}}
+  \put(2.0,2.8){\makebox(0,0)[b]{$f$}}
+
+  \put(1.2,0.5){\vector(1,0){1.6}}
+  \put(2.0,0.2){\makebox(0,0)[t]{$g$}}
+
+  \put(0.8,2.1){\vector(0,-1){1.2}}
+  \put(0.5,1.5){\makebox(0,0)[r]{$h$}}
+
+  \put(3.2,2.1){\vector(0,-1){1.2}}
+  \put(3.5,1.5){\makebox(0,0)[l]{$k$}}
+\end{picture}
+\caption{Morphism composition diagram demonstrating $k \circ f = g \circ h$.}
+\label{fig:commutative_square}
+\end{figure}
