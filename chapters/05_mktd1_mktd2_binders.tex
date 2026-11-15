@@ -1,0 +1,52 @@
+\section{MKTD1 and MKTD2 Frameworks, Dunaev Tagged Pairs, and Variable-Binding Operators}
+
+This chapter defines and demonstrates the standardized \texttt{gdmath.sty} macros for the two co-existing proof assistant variants (\texttt{MKTD1-system} and \texttt{MKTD2-system}), Morse-Kelley class theory with Dunaev tagged ordered pairs, and the complete family of variable-binding operators (binders).
+
+\subsection{MKTD1-Theory Sequents and Typed AST Judgments}
+
+In \texttt{MKTD1-framework} (\texttt{MKTD1-prover} / \texttt{MKTD1-system}), deductions are formulated in a sequent calculus over typed Standard ML abstract syntax expressions (\texttt{Class\_Expre}, \texttt{Fm\_Expre}, \texttt{Stmt}, \texttt{Ctx}, \texttt{Theory\_Expre}, and \texttt{Prf}) while strictly respecting the off-by-one level invariant between object-language classes and metatheoretic AST expressions:
+\begin{definition}[MKTD1 Sequent Judgments]
+For a theory expression $\mathcal{W} : \TheoryExpre$, a hypothesis context $\Gamma : \CtxExpre$, and a formula expression $\varphi : \FmExpre$, the sequent derivability judgment is written:
+\[
+  \mktdseq{\Gamma}{\varphi}
+  \quad\text{and}\quad
+  \mktdthseq{\mathcal{W}}{\Gamma}{\varphi}.
+\]
+\end{definition}
+
+\subsection{MKTD2-Theory Dependent Product and Sum Proof Terms}
+
+In \texttt{MKTD2-framework} (\texttt{MKTD2-prover} / \texttt{MKTD2-system}), formulas are treated as types and constructive proofs are represented as typed $\lambda$-terms inhabiting dependent products ($\Pi$) and dependent sums ($\Sigma$):
+\begin{definition}[MKTD2 Formulas-as-Types Judgments]
+Given a typing context $\Gamma$, a constructive proof term $p$, and a proposition-type $\Phi$, the typing judgment and its dependent constructors are given by:
+\[
+  \mktdty{\Gamma}{\LamTerm{x}{\ClassExpre}{p}}{\DepProd{x}{\ClassExpre}{\Phi(x)}},
+  \qquad
+  \mktdty{\Gamma}{\DepPair{t}{q}}{\DepSum{x}{\ClassExpre}{\Psi(x)}}.
+\]
+\end{definition}
+
+\subsection{Dunaev Tagged Ordered Pairs in Morse-Kelley Class Theory}
+
+Because standard Kuratowski ordered pairs $\{\{A\}, \{A, B\}\}$ collapse to the universal class when applied to proper classes ($A \notin V$ or $B \notin V$), \texttt{MKTD1-theory} and \texttt{MKTD2-theory} employ Dunaev tagged ordered pairs for arbitrary classes $X$ and $Y$:
+\begin{theorem}[Dunaev Tagged Ordered Pair Decomposition]
+For any classes $X$ and $Y$, the Dunaev tagged ordered pair is defined by element-wise tagging:
+\[
+  \dpair{X}{Y} \eqdef \dpairdef{X}{Y},
+\]
+where $\dtagL{X} = \{\{u, \varnothing\} \mid u \in X\}$ and $\dtagR{Y} = \{\{\{v\}, \{\varnothing\}\} \mid v \in Y\}$. For all classes $X_1, Y_1, X_2, Y_2$,
+\[
+  \dpair{X_1}{Y_1} = \dpair{X_2}{Y_2} \LRA (X_1 = X_2 \land Y_1 = Y_2).
+\]
+\end{theorem}
+
+\subsection{Unified Variable-Binding Operators (Binders)}
+
+The general term \emph{binder} (or \emph{variable-binding operator}) encompasses the four quantifiers ($\forall, \exists, \exists!, !$), class comprehension ($\kappa$), definite description ($\iota$), and the three choice descriptors ($\tau \equiv \tauUn$, $\epsilon \equiv \tauExUniqEmpty$, $\varepsilon \equiv \tauEmpty$):
+\begin{align*}
+  \text{Universal and Existential Quantifiers:} &\quad \bforall{X}{\varphi(X)}, \quad \bexists{X}{\varphi(X)} \\
+  \text{Unique Existence and Uniqueness Quantifiers:} &\quad \bexistsuniq{X}{\varphi(X)}, \quad \buniq{X}{\varphi(X)} \\
+  \text{Class Comprehension Binder:} &\quad \bkappa{X}{\varphi(X)} \eqdef \bclasscomp{X}{\varphi(X)} \\
+  \text{Definite Description Binder:} &\quad \biota{X}{\varphi(X)} \\
+  \text{Choice Descriptor Binders:} &\quad \btau{X}{\varphi(X)} \equiv \tauUn X.\,\varphi(X), \quad \bepsilon{X}{\varphi(X)} \equiv \tauExUniqEmpty X.\,\varphi(X), \quad \bvarepsilon{X}{\varphi(X)} \equiv \tauEmpty X.\,\varphi(X).
+\end{align*}

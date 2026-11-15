@@ -14,6 +14,7 @@ The `gdmath.sty` package provides standardized mathematical logic, set theory, c
 6. Category Theory
 7. Formal Proof Assistants and Type Theory
 8. Semantic Brackets and Delimiters
+9. MKTD1 / MKTD2 Frameworks, Dunaev Tagged Pairs, and Variable-Binding Operators
 
 ---
 
@@ -148,6 +149,33 @@ Proof shorthands:
 | `\sem{x}` | `\llbracket x \rrbracket` | Full semantic bracket wrapper |
 | `\tuple{x}` | `\langle x \rangle` | Ordered tuple enclosure |
 | `\cornerquote{x}` | `\ulcorner x \urcorner` | Gödel / corner quote enclosure |
+
+---
+
+## 9. MKTD1 / MKTD2 Frameworks, Dunaev Tagged Pairs, and Variable-Binding Operators
+
+Demonstrated in `chapters/05_mktd1_mktd2_binders.tex` (and `examples/chapters/05_mktd1_mktd2_binders.tex`):
+
+| Macro | Expansion | Description |
+|---|---|---|
+| `\mktdseq{G}{p}` | `G \vdash_{\mathrm{MKTD1}} p` | MKTD1-theory sequent derivability judgment |
+| `\mktdthseq{W}{G}{p}` | `W ; G \vdash_{\mathrm{MKTD1}} p` | Theory-scoped MKTD1-theory sequent judgment |
+| `\ClassExpre` / `\FmExpre` / `\TheoryExpre` | Operator | Typed SML AST expression sorts in MKTD1-system |
+| `\CtxExpre` / `\StmtExpre` / `\PrfExpre` | Operator | Context, statement, and proof expression sorts in MKTD1-system |
+| `\isSet` | Operator | Set-hood predicate in NBG / MK class theory |
+| `\mktdty{G}{t}{T}` | `G \vdash_{\mathrm{MKTD2}} t : T` | MKTD2-theory constructive typing judgment |
+| `\DepProd{x}{A}{B}` | `\prod_{x : A} B` | Dependent product type in MKTD2-framework |
+| `\DepSum{x}{A}{B}` | `\sum_{x : A} B` | Dependent sum type in MKTD2-framework |
+| `\LamTerm{x}{A}{t}` | `\lambda (x : A).\, t` | Typed lambda proof term in MKTD2-framework |
+| `\DepPair{a}{b}` | `\langle a , b \rangle_{\Sigma}` | Dependent pair constructor in MKTD2-framework |
+| `\dtagL{X}` / `\dtagR{Y}` | `\{X, \varnothing\}` / `\{\{Y\}, \{\varnothing\}\}` | Left and right Dunaev class element tags |
+| `\dpair{X}{Y}` | `\langle X , Y \rangle_{\mathrm{D}}` | Dunaev tagged ordered pair for arbitrary classes |
+| `\dpairdef{X}{Y}` | `\dtagL{X} \cup \dtagR{Y}` | Definitional expansion of Dunaev tagged ordered pair |
+| `\bforall{x}{p}` / `\bexists{x}{p}` | `\forall x.\, p` / `\exists x.\, p` | Universal and existential quantifier binders |
+| `\bexistsuniq{x}{p}` / `\buniq{x}{p}` | `\exists! x.\, p` / `! x.\, p` | Unique existence and uniqueness quantifier binders |
+| `\bkappa{x}{p}` / `\bclasscomp{x}{p}` | `\kappa x.\, p` / `\{x \mid p\}` | Class comprehension binder (over `Class` variables) |
+| `\biota{x}{p}` | `\iota x.\, p` | Definite description binder |
+| `\btau{x}{p}` / `\bepsilon{x}{p}` / `\bvarepsilon{x}{p}` | `\tau x.\, p` / `\epsilon x.\, p` / `\varepsilon x.\, p` | Choice descriptor binders ($\tau \equiv \tau^{\mathrm{Un}}$, $\epsilon \equiv \tau^{\exists!}_{\varnothing}$, $\varepsilon \equiv \tau^{\varnothing}$) |
 
 ---
 

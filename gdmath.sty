@@ -129,4 +129,42 @@
 \providecommand{\tuple}[1]{\langle #1 \rangle}
 \providecommand{\cornerquote}[1]{\ulcorner #1 \urcorner}
 
+% =============================================================================
+% 9. MKTD1 / MKTD2 Frameworks, Dunaev Tagged Pairs, and Variable-Binding Operators
+% =============================================================================
+\providecommand{\mktdseq}[2]{#1 \vdash_{\mathrm{MKTD1}} #2}
+\providecommand{\mktdthseq}[3]{#1 ; #2 \vdash_{\mathrm{MKTD1}} #3}
+\DeclareMathOperatorSafe{\ClassExpre}{Class\_Expre}
+\DeclareMathOperatorSafe{\FmExpre}{Fm\_Expre}
+\DeclareMathOperatorSafe{\TheoryExpre}{Theory\_Expre}
+\DeclareMathOperatorSafe{\CtxExpre}{Ctx}
+\DeclareMathOperatorSafe{\StmtExpre}{Stmt}
+\DeclareMathOperatorSafe{\PrfExpre}{Prf}
+\DeclareMathOperatorSafe{\isSet}{isSet}
+
+\providecommand{\mktdty}[3]{#1 \vdash_{\mathrm{MKTD2}} #2 : #3}
+\providecommand{\DepProd}[3]{\prod_{#1 : #2} #3}
+\providecommand{\DepSum}[3]{\sum_{#1 : #2} #3}
+\providecommand{\LamTerm}[3]{\lambda (#1 : #2).\, #3}
+\providecommand{\DepPair}[2]{\langle #1 , #2 \rangle_{\Sigma}}
+
+\providecommand{\dtagL}[1]{\{#1, \varnothing\}}
+\providecommand{\dtagR}[1]{\{\{#1\}, \{\varnothing\}\}}
+\providecommand{\dpair}[2]{\langle #1 , #2 \rangle_{\mathrm{D}}}
+\providecommand{\dpairdef}[2]{\dtagL{#1} \cup \dtagR{#2}}
+
+\providecommand{\bforall}[2]{\forall #1.\, #2}
+\providecommand{\bexists}[2]{\exists #1.\, #2}
+\providecommand{\bexistsuniq}[2]{\exists! #1.\, #2}
+\providecommand{\buniq}[2]{! #1.\, #2}
+\providecommand{\bkappa}[2]{\kappa #1.\, #2}
+\providecommand{\bclasscomp}[2]{\{#1 \mid #2\}}
+\providecommand{\biota}[2]{\iota #1.\, #2}
+\providecommand{\btau}[2]{\tau #1.\, #2}
+\providecommand{\bepsilon}[2]{\epsilon #1.\, #2}
+\providecommand{\bvarepsilon}[2]{\varepsilon #1.\, #2}
+\providecommand{\tauUn}{\tau^{\mathrm{Un}}}
+\providecommand{\tauExUniqEmpty}{\tau^{\exists!}_{\varnothing}}
+\providecommand{\tauEmpty}{\tau^{\varnothing}}
+
 \endinput
